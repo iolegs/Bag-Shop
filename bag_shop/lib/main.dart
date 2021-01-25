@@ -1,3 +1,5 @@
+import 'package:bag_shop/constants.dart';
+import 'package:bag_shop/screens/catalog_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(BagShopApp());
@@ -7,7 +9,12 @@ class BagShopApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Bag Shop',
-      home: Scaffold(),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        textTheme: Theme.of(context).textTheme.apply(bodyColor: kTextColor),
+      ),
+      home: CatalogScreen(),
     );
   }
 }
